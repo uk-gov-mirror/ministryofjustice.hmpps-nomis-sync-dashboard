@@ -74,7 +74,7 @@ test.describe('Move Start Date', () => {
 
     await nomisActivitiesMigrationApi.stubGetActivityMigration({
       response: aMigration(JSON.stringify(aFilter(tomorrow, today))),
-      status: '200',
+      status: 200,
     })
     await activitiesPage.moveStartDate(row).click()
 
@@ -92,11 +92,11 @@ test.describe('Move Start Date', () => {
 
     await nomisActivitiesMigrationApi.stubGetActivityMigration({
       response: aMigration(JSON.stringify(aFilter(tomorrow, today))),
-      status: '200',
+      status: 200,
     })
     await activitiesPage.moveStartDate(row).click()
 
-    await nomisActivitiesMigrationApi.stubMoveStartDate({ status: '200', warnings: ['Warning 1', 'Warning 2'] })
+    await nomisActivitiesMigrationApi.stubMoveStartDate({ status: 200, warnings: ['Warning 1', 'Warning 2'] })
 
     const moveStartDatePage = await MoveActivityStartDate.verifyOnPage(page)
     await moveStartDatePage.newActivityStartDateInput.clear()
@@ -118,11 +118,11 @@ test.describe('Move Start Date', () => {
 
     await nomisActivitiesMigrationApi.stubGetActivityMigration({
       response: aMigration(JSON.stringify(aFilter(tomorrow, today))),
-      status: '200',
+      status: 200,
     })
     await activitiesPage.moveStartDate(row).click()
 
-    await nomisActivitiesMigrationApi.stubMoveStartDate({ status: '500' })
+    await nomisActivitiesMigrationApi.stubMoveStartDate({ status: 500 })
     const moveStartDatePage = await MoveActivityStartDate.verifyOnPage(page)
     await moveStartDatePage.newActivityStartDateInput.clear()
     await moveStartDatePage.newActivityStartDateInput.fill(twoDaysTime)

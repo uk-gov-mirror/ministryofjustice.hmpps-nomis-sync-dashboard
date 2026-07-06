@@ -22,7 +22,7 @@ test.describe('End Activities', () => {
   })
 
   test('should display OK result', async ({ page }) => {
-    await nomisActivitiesMigrationApi.stubEndActivities('200')
+    await nomisActivitiesMigrationApi.stubEndActivities(200)
 
     const activitiesPage = await ActivitiesMigrationPage.verifyOnPage(migrationTypeName, page)
     const row = activitiesPage.migrationResultsRow(0)
@@ -35,7 +35,7 @@ test.describe('End Activities', () => {
   })
 
   test('should display Not Found result', async ({ page }) => {
-    await nomisActivitiesMigrationApi.stubEndActivities('404')
+    await nomisActivitiesMigrationApi.stubEndActivities(404)
 
     const activitiesPage = await ActivitiesMigrationPage.verifyOnPage(migrationTypeName, page)
     const row = activitiesPage.migrationResultsRow(0)
@@ -48,7 +48,7 @@ test.describe('End Activities', () => {
   })
 
   test('should display Error result', async ({ page }) => {
-    await nomisActivitiesMigrationApi.stubEndActivities('500')
+    await nomisActivitiesMigrationApi.stubEndActivities(500)
 
     const activitiesPage = await ActivitiesMigrationPage.verifyOnPage(migrationTypeName, page)
     const row = activitiesPage.migrationResultsRow(0)
