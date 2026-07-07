@@ -137,7 +137,7 @@ const stubStartActivitiesMigration = (
     },
   })
 
-const stubEndActivities = (status: string): SuperAgentRequest =>
+const stubEndActivities = (status: number): SuperAgentRequest =>
   stubFor({
     request: {
       method: 'PUT',
@@ -153,7 +153,7 @@ const stubGetActivityMigration = ({
   status,
 }: {
   response: MigrationHistory
-  status: string
+  status: number
   warnings?: string[]
 }): SuperAgentRequest =>
   stubFor({
@@ -168,7 +168,7 @@ const stubGetActivityMigration = ({
     },
   })
 
-const stubMoveStartDate = ({ status, warnings = [] }: { status: string; warnings?: string[] }): SuperAgentRequest =>
+const stubMoveStartDate = ({ status, warnings = [] }: { status: number; warnings?: string[] }): SuperAgentRequest =>
   stubFor({
     request: {
       method: 'PUT',
