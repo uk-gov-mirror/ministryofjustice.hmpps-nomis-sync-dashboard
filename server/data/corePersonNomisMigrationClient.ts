@@ -14,7 +14,7 @@ export default class CorePersonNomisMigrationClient extends RestClient {
     logger.info(`starting a Alias and Identifier Migration`)
     return this.post<MigrationContextCorePersonMigrationFilter>(
       {
-        path: `/migrate/core-person/aliases-identifiers`,
+        path: `/migrate/core-person`,
       },
       asSystem(context.username),
     )
