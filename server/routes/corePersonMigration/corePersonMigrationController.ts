@@ -14,7 +14,7 @@ export default class CorePersonMigrationController {
     private readonly nomisMigrationService: NomisMigrationService,
   ) {}
 
-  private migrationType: string = 'CORE_PERSON_ALIASES_IDENTIFIERS'
+  private migrationType: string = 'CORE_PERSON'
 
   async getMigrations(_: Request, res: Response): Promise<void> {
     const { migrations } = await this.nomisMigrationService.getMigrationHistory(this.migrationType, context(res))

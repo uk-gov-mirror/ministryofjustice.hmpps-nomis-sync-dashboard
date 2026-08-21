@@ -11,7 +11,7 @@ import nomisMigrationApi from '../mockApis/nomisMigrationApi'
 import IndexPage from '../pages/indexPage'
 import nomisPrisonerApi from '../mockApis/nomisPrisonerApi'
 
-const migrationType: string = 'CORE_PERSON_ALIASES_IDENTIFIERS'
+const migrationType: string = 'CORE_PERSON'
 const migrationTypeName: string = 'Core Person Alias and Identifier'
 
 test.describe('Core Person Migration Start', () => {
@@ -35,7 +35,7 @@ test.describe('Core Person Migration Start', () => {
 
     test('Preview of migration will be shown prior to starting a migration', async ({ page }) => {
       await nomisMigrationApi.stubStartMigration({
-        domain: 'core-person/aliases-identifiers',
+        domain: 'core-person',
         response: {
           migrationId: '2022-03-23T11:11:56',
           estimatedCount: 100_988,
