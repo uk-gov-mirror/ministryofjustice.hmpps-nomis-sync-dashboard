@@ -36,6 +36,7 @@ generic-service:
   # Environment variables to load into the deployment
   env:
     NODE_ENV: "production"
+    LOG_LEVEL: 'info'
     REDIS_ENABLED: "true"
     REDIS_TLS_ENABLED: "true"
     TOKEN_VERIFICATION_ENABLED: "true"
@@ -57,13 +58,14 @@ generic-service:
       APPINSIGHTS_SUBSCRIPTION_ID: "APPINSIGHTS_SUBSCRIPTION_ID"
     hmpps-redis:
       REDIS_HOST: "REDIS_HOST"
-      REDIS_PASSWORD: "REDIS_PASSWORD"
+      REDIS_AUTH_TOKEN: "REDIS_PASSWORD"
 
   allowlist:
     moj-official-tgw-prod: 51.149.250.0/24
     moj-official-tgw-preprod: 51.149.251.0/24
     groups:
-      - internal
+      - digital_staff_and_mojo
+      - moj_cloud_platform
 
 generic-prometheus-alerts:
   targetApplication: hmpps-nomis-sync-dashboard
