@@ -2,7 +2,7 @@
 # Per environment values which override defaults in hmpps-nomis-sync-dashboard/values.yaml
 
 generic-service:
-  replicaCount: 4
+  replicaCount: 2
 
   ingress:
     host: nomis-sync-dashboard-preprod.hmpps.service.justice.gov.uk
